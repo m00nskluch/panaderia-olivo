@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-brand-cream-50 text-brand-charcoal-900 font-sans antialiased min-h-screen selection:bg-brand-red-100 selection:text-brand-red-900;
+  }
+}
+
+/* Custom Scrollbar for Drawer and Page */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1ede4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4c8b6;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b8a992;
+}
+
+/* Glassmorphism helpers */
+.glass-nav {
+  background: rgba(255, 253, 247, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(229, 220, 206, 0.6);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Badge glow effects */
+.badge-artesanal {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-caliente {
+  background: linear-gradient(135deg, #ffe4e6 0%, #fecdd3 100%);
+  color: #9f1239;
+  border: 1px solid rgba(244, 63, 94, 0.25);
+}
+
+/* Touch targets min 44px on mobile */
+.touch-target {
+  min-width: 44px;
+  min-height: 44px;
+}
