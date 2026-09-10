@@ -68,22 +68,22 @@ export function createCategoryTabs({ onFilterChange }: CategoryTabsProps): HTMLE
     </div>
 
     <!-- Pill Tabs Scrollable on Mobile -->
-    <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
+    <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-2 scrollbar-none -mx-2 px-2 sm:mx-0 sm:px-0">
       ${categoryOptions
         .map(
           (cat) => `
         <button
           type="button"
           data-category="${cat.slug}"
-          class="tab-pill-btn whitespace-nowrap touch-target flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-red-600 ${
+          class="tab-pill-btn whitespace-nowrap touch-target flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-red-600 ${
             cat.slug === 'todos'
               ? 'bg-brand-red-700 text-white shadow-soft'
               : 'bg-white text-brand-charcoal-700 hover:bg-brand-cream-100 border border-brand-cream-300'
           }"
         >
-          <span>${cat.icono}</span>
+          <span class="text-sm sm:text-base">${cat.icono}</span>
           <span>${cat.nombre}</span>
-          <span class="tab-count text-[11px] px-2 py-0.5 rounded-full ${
+          <span class="tab-count text-[10px] sm:text-[11px] px-1.5 sm:px-2 py-0.5 rounded-full ${
             cat.slug === 'todos'
               ? 'bg-brand-red-800 text-white'
               : 'bg-brand-cream-200 text-brand-charcoal-700'
@@ -118,17 +118,17 @@ export function createCategoryTabs({ onFilterChange }: CategoryTabsProps): HTMLE
         const countSpan = b.querySelector('.tab-count');
         if (b === btn) {
           b.className =
-            'tab-pill-btn whitespace-nowrap touch-target flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-red-600 bg-brand-red-700 text-white shadow-soft';
+            'tab-pill-btn whitespace-nowrap touch-target flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-red-600 bg-brand-red-700 text-white shadow-soft';
           if (countSpan) {
             countSpan.className =
-              'tab-count text-[11px] px-2 py-0.5 rounded-full bg-brand-red-800 text-white';
+              'tab-count text-[10px] sm:text-[11px] px-1.5 sm:px-2 py-0.5 rounded-full bg-brand-red-800 text-white';
           }
         } else {
           b.className =
-            'tab-pill-btn whitespace-nowrap touch-target flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-red-600 bg-white text-brand-charcoal-700 hover:bg-brand-cream-100 border border-brand-cream-300';
+            'tab-pill-btn whitespace-nowrap touch-target flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-red-600 bg-white text-brand-charcoal-700 hover:bg-brand-cream-100 border border-brand-cream-300';
           if (countSpan) {
             countSpan.className =
-              'tab-count text-[11px] px-2 py-0.5 rounded-full bg-brand-cream-200 text-brand-charcoal-700';
+              'tab-count text-[10px] sm:text-[11px] px-1.5 sm:px-2 py-0.5 rounded-full bg-brand-cream-200 text-brand-charcoal-700';
           }
         }
       });
